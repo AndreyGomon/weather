@@ -11,9 +11,10 @@ plugins {
 }
 
 group = "io.github.andreygomon"
-version = "0.1.0-SNAPSHOT"
+version = "1.0.0"
 
 kotlin {
+    withSourcesJar(publish = false)
     jvmToolchain(17)
 
     androidTarget {
@@ -109,4 +110,32 @@ compose.resources {
     publicResClass = true
     packageOfResClass = "io.github.andreygomon.weather.resources"
     generateResClass = always
+}
+
+publishing {
+    repositories {
+        maven {
+            name = "GitHubPackages"
+
+            url = uri(
+                "https://maven.pkg.github.com/andreygomon/weather"
+            )
+
+            credentials {
+                username = providers
+                    .gradleProperty("gpr.user")
+                    .orElse(
+                        providers.environmentVariable("GITHUB_ACTOR")
+                    )
+                    .orNull
+
+                password = providers
+                    .gradleProperty("gpr.key")
+                    .orElse(
+                        providers.environmentVariable("GITHUB_TOKEN")
+                    )
+                    .orNull
+            }
+        }
+    }
 }
