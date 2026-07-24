@@ -1,0 +1,120 @@
+CREATE TABLE IF NOT EXISTS dbWeather (
+  latitude REAL NOT NULL,
+  longitude REAL NOT NULL,
+  timestamp INTEGER NOT NULL,
+  provider TEXT NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY (latitude, longitude, provider)
+);
+
+CREATE TABLE IF NOT EXISTS dbForecast (
+  latitude REAL NOT NULL,
+  longitude REAL NOT NULL,
+  isCurrent INTEGER NOT NULL DEFAULT 0,
+  timestamp INTEGER NOT NULL,
+  provider TEXT NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY (latitude, longitude, provider)
+);
+
+CREATE TABLE IF NOT EXISTS dbHourly (
+  latitude REAL NOT NULL,
+  longitude REAL NOT NULL,
+  isCurrent INTEGER NOT NULL DEFAULT 0,
+  timestamp INTEGER NOT NULL,
+  provider TEXT NOT NULL,
+  data TEXT NOT NULL,
+  PRIMARY KEY (latitude, longitude, provider)
+);
+
+CREATE TABLE IF NOT EXISTS dbCurrentWeather (
+  id INTEGER NOT NULL PRIMARY KEY CHECK (id = 1),
+  timestamp INTEGER NOT NULL,
+  data TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS dbSettings (
+  id TEXT NOT NULL PRIMARY KEY CHECK (id = 'settings'),
+  provider TEXT NOT NULL,
+  source TEXT NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS dbStats (
+  provider TEXT NOT NULL PRIMARY KEY,
+  requests INTEGER NOT NULL DEFAULT 0,
+  requestsStart INTEGER NOT NULL
+);
+
+upsertStat:
+INSERT OR REPLACE INTO dbStats(
+  provider,
+  requests,
+  requestsStart
+)
+VALUES (?, ?, ?);
+
+insertSettings:
+INSERT OR REPLACE INTO dbSettings(id, provider, source)
+VALUES ('settings', ?, ?);
+
+insertWeather:
+INSERT OR REPLACE INTO dbWeather(latitude, longitude, timestamp, provider, data)
+VALUES (?, ?, ?, ?, ?);
+
+clearCurrentForecast:
+UPDATE dbForecast SET isCurrent = 0 WHERE isCurrent = 1;
+
+insertForecast:
+INSERT OR REPLACE INTO dbForecast(latitude, longitude, isCurrent, timestamp, provider, data)
+VALUES (?, ?, ?, ?, ?, ?);
+
+clearCurrentHourly:
+UPDATE dbHourly SET isCurrent = 0 WHERE isCurrent = 1;
+
+insertHourly:
+INSERT OR REPLACE INTO dbHourly(latitude, longitude, isCurrent, timestamp, provider, data)
+VALUES (?, ?, ?, ?, ?, ?);
+
+insertCurrentWeather:
+INSERT OR REPLACE INTO dbCurrentWeather(id, timestamp, data)
+VALUES (1, ?, ?);
+
+getStats:
+SELECT * FROM dbStats;
+
+getSettings:
+SELECT * FROM dbSettings
+WHERE id = 'settings'
+LIMIT 1;
+
+getWeather:
+SELECT * FROM dbWeather
+WHERE latitude = ? AND longitude = ? AND provider = ?
+LIMIT 1;
+
+getForecast:
+SELECT * FROM dbForecast
+WHERE latitude = ? AND longitude = ? AND provider = ?
+LIMIT 1;
+
+getHourly:
+SELECT * FROM dbHourly
+WHERE latitude = ? AND longitude = ? AND provider = ?
+LIMIT 1;
+
+getCurrentWeather:
+SELECT * FROM dbCurrentWeather
+WHERE id = 1
+LIMIT 1;
+
+getCurrentForecast:
+SELECT * FROM dbForecast
+WHERE isCurrent = 1
+ORDER BY timestamp DESC
+LIMIT 1;
+
+getCurrentHourly:
+SELECT * FROM dbHourly
+WHERE isCurrent = 1
+ORDER BY timestamp DESC
+LIMIT 1;

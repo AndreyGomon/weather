@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   version="1.1"
+   id="svg1791"
+   sodipodi:docname="night_mainly_clear.svg"
+   inkscape:version="1.2.2 (b0a8486541, 2022-12-01)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1793"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="0.41259766"
+     inkscape:cx="-681.05089"
+     inkscape:cy="283.56923"
+     inkscape:window-width="1920"
+     inkscape:window-height="1043"
+     inkscape:window-x="1920"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg1791" />
+  <defs
+     id="defs1787">
+    <linearGradient
+       id="a"
+       x1="54.33"
+       y1="29.03"
+       x2="187.18"
+       y2="259.13"
+       gradientUnits="userSpaceOnUse">
+      <stop
+         offset="0"
+         stop-color="#86c3db"
+         id="stop1777" />
+      <stop
+         offset="0.45"
+         stop-color="#86c3db"
+         id="stop1779" />
+      <stop
+         offset="1"
+         stop-color="#5eafcf"
+         id="stop1781" />
+    </linearGradient>
+    <symbol
+       id="b"
+       viewBox="0 0 270 270">
+      <path
+         d="M252.25,168.63C178.13,168.63,118,109.35,118,36.21A130.48,130.48,0,0,1,122.47,3C55.29,10.25,3,66.37,3,134.58,3,207.71,63.09,267,137.21,267,199.69,267,252,224.82,267,167.79A135.56,135.56,0,0,1,252.25,168.63Z"
+         stroke="#72b9d5"
+         stroke-linecap="round"
+         stroke-linejoin="round"
+         stroke-width="6"
+         fill="url(#a)"
+         id="path1784" />
+    </symbol>
+  </defs>
+  <use
+     width="270"
+     height="270"
+     transform="translate(121 121)"
+     xlink:href="#b"
+     id="use1789" />
+  <g
+     id="use564"
+     transform="matrix(0.67770365,0,0,0.73326834,47.477212,265.05835)"
+     style="fill:#e6f0ff;fill-opacity:1;stroke:#dbe4ff;stroke-opacity:1">
+    <path
+       d="m 291,107 c -0.85,0 -1.68,0.09 -2.53,0.13 A 83.9,83.9 0 0 0 135.6,42.92 55.91,55.91 0 0 0 51,91 56.56,56.56 0 0 0 51.8,100.08 60,60 0 0 0 63,219 c 1.35,0 2.67,-0.11 4,-0.2 v 0.2 h 224 a 56,56 0 0 0 0,-112 z"
+       stroke="#e6effc"
+       stroke-miterlimit="10"
+       stroke-width="6"
+       fill="url(#a)"
+       id="path646"
+       style="fill:#e6f0ff;fill-opacity:1;stroke:#dbe4ff;stroke-opacity:1" />
+  </g>
+  <g
+     id="use564-3"
+     transform="matrix(0.32720674,0,0,0.37246235,314.16104,300.47575)"
+     style="fill:#e6f0ff;fill-opacity:1;stroke:#dbe4ff;stroke-opacity:1">
+    <path
+       d="m 291,107 c -0.85,0 -1.68,0.09 -2.53,0.13 A 83.9,83.9 0 0 0 135.6,42.92 55.91,55.91 0 0 0 51,91 56.56,56.56 0 0 0 51.8,100.08 60,60 0 0 0 63,219 c 1.35,0 2.67,-0.11 4,-0.2 v 0.2 h 224 a 56,56 0 0 0 0,-112 z"
+       stroke="#e6effc"
+       stroke-miterlimit="10"
+       stroke-width="6"
+       fill="url(#a)"
+       id="path646-6"
+       style="fill:#e6f0ff;fill-opacity:1;stroke:#dbe4ff;stroke-opacity:1" />
+  </g>
+</svg>
